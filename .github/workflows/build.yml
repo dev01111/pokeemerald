@@ -45,6 +45,12 @@ jobs:
 
       - name: Compare
         run: make -j${nproc} all syms
+        
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: "PokeEmerald"
+          path: "pokeemerald.gba" 
 
       - name: Modern
         env:
