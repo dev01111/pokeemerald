@@ -51,7 +51,11 @@ jobs:
           MODERN: 1
           COMPARE: 0
         run: make -j${nproc} all
-
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with: 
+          name: "PokeEmerald"
+          path: "pokeemerald.gba"
       - name: Move symfiles
         if: ${{ github.event_name == 'push' }}
         run: |
